@@ -1,21 +1,15 @@
-import win32security #get sid
-import json as jsond  # json
 
-import time  # sleep before exit
-
-import binascii  # hex encoding
-
-  # https requests
-
-from uuid import uuid4  # gen random guid
-import webbrowser
-import platform
-import subprocess
-import datetime
-import sys
 import os
+import sys
+import time  
+import binascii  
+import platform
 import requests
-from requests_toolbelt.adapters.fingerprint import FingerprintAdapter
+import win32security 
+
+import json as jsond  
+
+from uuid import uuid4  
 
 try:
     from Crypto.Cipher import AES
@@ -33,13 +27,10 @@ class api:
     name = ownerid = secret = version = hash_to_check = ""
 
     def __init__(self, name, ownerid, secret, version, hash_to_check):
-        self.name = name
-
-        self.ownerid = ownerid
-
-        self.secret = secret
-
-        self.version = version
+        self.name       = name
+        self.ownerid    = ownerid
+        self.secret     = secret
+        self.version    = version
         self.hash_to_check = hash_to_check
         self.init()
 
